@@ -1,0 +1,99 @@
+@import './variables.scss';
+
+
+// set text color base on background color
+@function setTextColor($color) {
+    @if (lightness($color) > 60) {
+        @return $dark-color;
+    }
+
+    @else {
+        @return $light-color;
+    }
+}
+
+
+
+// Set Background  & Text Color
+@mixin setBackground($color) {
+    background-color: $color;
+    color: setTextColor($color);
+}
+
+
+// badges 
+.badge{
+    font-size: 1.1rem;
+    padding: 0.2rem 0.5rem;
+    margin: 0.3rem;
+    text-align: center;
+    background-color: $light-color;
+    color: $dark-color;
+    border-radius: 5px;
+    &.badge-primary {
+        @include setBackground($primary-color);
+    }
+    &.badge-secondary {
+        @include setBackground($secondary-color);
+    }
+    &.badge-dark {
+        @include setBackground($dark-color);
+    }
+    &.badge-success {
+        @include setBackground($success-color);
+    }
+    &.badge-danger {
+        @include setBackground($danger-color);
+    }
+}
+
+
+// margin and padding
+
+@each $space in $spaceamounts {
+    // all around margin
+    .m-#{$space} {
+        margin: #{$space}rem;
+    }
+
+    // vertical margin
+    .my-#{$space} {
+        margin: #{$space}rem 0;
+     
+    }
+    // all around padding
+    .p-#{$space} {
+        padding: #{$space}rem;
+    }
+
+    // vertical padding
+    .py-#{$space} {
+        padding: #{$space}rem 0;
+        
+    }
+
+    
+}
+
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    thead{
+        background-color: $primary-color;
+        color: $light-color;
+    }
+    th, td{
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid $grey-color;
+    }
+    tr:nth-child(even){
+        background-color: $light-color;
+    }
+    tr:hover{
+        background-color: $grey-color;
+    }
+}

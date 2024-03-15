@@ -1,4 +1,4 @@
-# Application KRUP
+# Application KRYSTO
 
 
 ## Project Structure

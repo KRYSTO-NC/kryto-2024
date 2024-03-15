@@ -1,0 +1,122 @@
+@import '../../../SASS/variables';
+@import '../../../SASS/variables';
+@import '../../../SASS/mixins';
+@import '../../../SASS/animations';
+
+.footer {
+  background-color: white;
+  padding: 6rem;
+  margin: auto;
+
+  border-top: 4px solid $secondary-color;
+
+  .row {
+    display: flex;
+
+    flex-wrap: wrap;
+  }
+}
+
+.footer-container {
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
+
+  h4 {
+    font-size: 1.3rem;
+    color: $primary-color;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      background-color: $primary-color;
+      height: 2px;
+      width: 50px;
+      box-sizing: border-box;
+    }
+  }
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    a {
+      color: $primary-color;
+      display: block;
+      margin-bottom: 1rem;
+      transition: all 0.5s ease-in-out;
+      font-size: 1.4rem;
+      text-transform: capitalize;
+      display: block;
+
+      &:hover {
+        color: $secondary-color;
+        padding-left: 1rem;
+      }
+    }
+  }
+}
+
+.social-links {
+  a {
+    display: inline-block;
+    height: 4.5rem;
+    width: 4.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 1rem 1rem 0;
+    text-align: center;
+    line-height: 6rem;
+    color: $primary-color;
+
+    border-radius: 50%;
+
+    svg {
+      font-size: 2rem;
+    }
+    &:hover {
+      background-color: $secondary-color;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}
+
+.img-footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo-footer {
+  height: 7rem;
+}
+
+// Responsive
+@media screen and (max-width: 768px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 2rem;
+  }
+  .logo-footer {
+    height: 6rem;
+  }
+}
+@media screen and (max-width: 574px) {
+  .footer-col {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .logo-footer {
+    height: 4.3rem;
+  }
+}

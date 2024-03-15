@@ -1,0 +1,179 @@
+@import './variables.scss'; 
+@import './mixins.scss';
+
+
+
+
+
+// container 
+.container {
+    max-width: $max-width;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    min-height: 100vh;
+
+}
+
+
+
+
+// text styles
+
+.x-large {
+    font-size: 8rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+.large {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+.medium {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+
+}
+
+.lead{
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+.s-small{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.text-primary{
+    color: $primary-color;
+}
+
+
+.round-img {
+    border-radius: 50%;
+}
+
+
+.line {
+    height: 1px;
+    background-color: $grey-color;
+    margin: 2rem 0;
+}
+// Backgrounds 
+
+.bg {
+    &-primary {
+          @include setBackground($primary-color);
+    }
+    &-secondary {
+          @include setBackground($secondary-color);
+    }
+    &-light {
+          @include setBackground($light-color);
+          border: solid 1px  #ccc;
+    }
+    &-dark {
+          @include setBackground($dark-color);
+    }
+    &-success {
+          @include setBackground($success-color);
+    }
+    &-danger {
+          @include setBackground($danger-color);
+    }
+    &-white {
+          @include setBackground(#fff);
+          border: solid 1px  #ccc;
+    }
+}
+
+
+// Buttons
+
+.btn{
+     display : inline-block;
+    padding: 0.7rem 2rem;
+    border: none;
+    background-color: $light-color;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    width: auto;
+
+    svg{
+        margin-right: 0.5rem;
+        font-size: 1.8rem;
+    }
+    
+
+    &:hover {
+        transform: translateY(-0.2rem);
+        background : lighten($dark-color, 5%);
+
+
+    }
+    &-primary {
+        @include setBackground($primary-color);
+        color: $light-color;
+        &:hover {
+            @include setBackground(lighten($primary-color, 10%));
+        }
+    }
+    &-secondary {
+        @include setBackground($secondary-color);
+        color: $light-color;
+        &:hover {
+            @include setBackground(lighten($secondary-color, 10%));
+        }
+    }
+    &-light {
+        @include setBackground(lighten($grey-color, 10%));
+        
+        &:hover {
+            @include setBackground($grey-color);
+        }
+       
+    }
+    &-dark {
+        @include setBackground($dark-color);
+        color: $light-color;
+        &:hover {
+            @include setBackground(lighten($dark-color, 10%));
+        }
+
+    }
+    &-success {
+        @include setBackground($success-color);
+        color: $light-color;
+        &:hover {
+            @include setBackground(lighten($success-color, 10%));
+        }
+    }
+    &-danger {
+        @include setBackground($danger-color);
+        color: $light-color;
+        &:hover {
+            @include setBackground(darken($danger-color, 30%));
+        }
+    }
+    
+
+}
+
+
+.dark-overlay{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+}

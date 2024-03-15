@@ -1,8 +1,29 @@
-function App() {
+import React from 'react'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+import './sass/main.css'
+
+import ScrollToTop from './components/utils/ScrollToTop'
+
+import { Outlet } from 'react-router-dom'
+import Navbar from './components/layout/navbar/Navbar'
+import Footer from './components/layout/footer/Footer'
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>Krup</h1>
-    </div>
+    <>
+      <ToastContainer />
+      <ScrollToTop />
+
+      <>
+        <Navbar />
+        <main className="container">
+          <Outlet />
+        </main>
+        <Footer />
+      </>
+    </>
   )
 }
 

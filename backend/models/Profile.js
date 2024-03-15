@@ -2,19 +2,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const geocoder = require('../utils/geocoder')
 const Product = require('./Product')
-const reviewSchema = mongoose.Schema(
-  {
-    user: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: 'User',
-    },
-    name: { type: String, required: true },
-    rating: { type: Number, required: true },
-    comment: { type: String, required: true },
-  },
-  { timestamps: true },
-)
 
 const ProfileSchema = new mongoose.Schema({
   user: {
@@ -24,21 +11,15 @@ const ProfileSchema = new mongoose.Schema({
   company: {
     type: String,
   },
+  logo: {
+    type: string,
+  },
   website: {
     type: String,
     match: [
       /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/,
       'Please use a valid URL with HTTP or HTTPS',
     ],
-  },
-
-  status: {
-    type: String,
-    required: true,
-  },
-
-  categoryProduct: {
-    type: [String],
   },
 
   bio: {
@@ -72,58 +53,6 @@ const ProfileSchema = new mongoose.Schema({
     country: String,
   },
 
-  // experience: [
-  //   {
-  //     title: {
-  //       type: String,
-  //       required: true,
-  //     },
-  //     company: {
-  //       type: String,
-  //       required: true,
-  //     },
-  //     location: {
-  //       type: String,
-  //     },
-  //     from: {
-  //       type: Date,
-  //       required: true,
-  //     },
-  //     to: {
-  //       type: Date,
-  //     },
-  //     current: {
-  //       type: Boolean,
-  //       default: false,
-  //     },
-  //     description: {
-  //       type: String,
-  //     },
-  //   },
-  // ],
-  // product: [
-  //   {
-  //     name: {
-  //       type: String,
-  //       required: true,
-  //     },
-  //     description: {
-  //       type: String,
-  //       required: true,
-  //       maxlength: [500, 'Description can not be more than 500 characters'],
-  //     },
-  //     category: {
-  //       type: String,
-  //     },
-  //     price: {
-  //       type: Number,
-  //     },
-  //     url: {
-  //       type: String,
-  //     },
-  //   },
-  // ],
-
   social: {
     youtube: {
       type: String,
@@ -141,27 +70,6 @@ const ProfileSchema = new mongoose.Schema({
       type: String,
     },
   },
-
-  reviews: [reviewSchema],
-  reports: [
-    {
-      user: {
-        type: Schema.Types.ObjectId,
-        ref: 'user',
-      },
-      reason: {
-        type: String,
-        required: true,
-      },
-      details: {
-        type: String,
-      },
-      date: {
-        type: Date,
-        default: Date.now,
-      },
-    },
-  ],
 
   date: {
     type: Date,
@@ -186,21 +94,6 @@ ProfileSchema.pre('save', async function (next) {
   // Do not save address in DB
   this.address = undefined
   next()
-})
-
-// Cascade delete courses when a bootcamp is deleted
-ProfileSchema.pre('remove', async function (next) {
-  console.log(`Product being removed from profile ${this._id}`)
-  await this.model('Product').deleteMany({ profile: this._id })
-  next()
-})
-
-// Reverse populate with virtuals
-ProfileSchema.virtual('products', {
-  ref: 'Product',
-  localField: '_id',
-  foreignField: 'profile',
-  justOne: false,
 })
 
 module.exports = Profile = mongoose.model('profile', ProfileSchema)

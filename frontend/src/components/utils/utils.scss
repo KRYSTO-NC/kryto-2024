@@ -1,0 +1,41 @@
+@import '../../SASS/reset';
+@import '../../SASS/variables';
+@import '../../SASS/mixins';
+
+
+
+
+
+
+
+.paginate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+
+    .page-number-text{
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+
+}
+.paginate-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  a{
+    margin: 0 0.5rem;
+    background-color: $primary;
+    color: $white;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20%;
+  }
+}

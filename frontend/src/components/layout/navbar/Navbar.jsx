@@ -34,7 +34,7 @@ const Navbar = () => {
   const navigate = useNavigate()
 
   const { data: messages, isLoading, isError } = useGetMessagesQuery()
-
+   console.log(messages);
   const filteredMessages = messages
     ? messages.filter((message) => message.status === 'A traiter')
     : []
@@ -74,12 +74,7 @@ const Navbar = () => {
               <li>
                 <NavLink to="/nos-produits" label="Nos produits" />
               </li>
-              <li>
-                <NavLink
-                  to="/mes-produits-favoris"
-                  label="Ma liste de produits"
-                />
-              </li>
+          
 
               {userInfo.isAdmin && (
                 <>
@@ -149,12 +144,7 @@ const Navbar = () => {
               <li>
                 <NavLink to="/nos-produits" label="Nos produits" />
               </li>
-              <li>
-                <NavLink
-                  to="/mes-produits-favoris"
-                  label="Ma liste de produits"
-                />
-              </li>
+              
               {userInfo.isAdmin && (
                 <li>
                   <NavLink

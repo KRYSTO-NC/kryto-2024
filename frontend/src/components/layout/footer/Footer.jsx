@@ -1,5 +1,5 @@
 import './footer.css'
-import { FaFacebook } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import Logo from '../../../assets/logo/logo_krysto_couleur.png'
 
@@ -15,20 +15,16 @@ const Footer = () => {
           <div className="footer-col">
             <h4>À propos</h4>
             <ul>
-              <li><Link to={'/about'}>Notre entreprise</Link></li>
-              {/* <li><a href="#!">A propos</a></li>
-              <li><a href="#!">Nos services</a></li>
-              <li><a href="#!">Politique de confidentialité</a></li> */}
+              <li><Link to={'/a-propos'}>Notre entreprise</Link></li>
+       
             </ul>
           </div>
           <div className="footer-col">
             <h4>Liens</h4>
             <ul>
-              <li><Link to={'/about'}>Obtenir de l'aide</Link></li>
+       
               <li><Link to={'/faq'}>FAQ</Link></li>
-              {/* <li><a href="#!">Livraisons</a></li>
-              <li><a href="#!">Retours</a></li>
-              <li><a href="#!">Commandes</a></li> */}
+         
             </ul>
           </div>
           <div className="footer-col">
@@ -44,10 +40,10 @@ const Footer = () => {
           <div className="footer-col">
             <h4>Suivez-nous sur les réseaux</h4>
            <div className="social-links">
-              <Link target='_blank' to={"https://www.facebook.com/profile.php?id=61556216258230"}><FaFacebook/></Link>
-              {/* <a href="#!"><FaInstagram/></a>
+              <Link target='_blank' to={"https://www.facebook.com/Krysto.noumea/"}><FaFacebook/></Link>
+              <a href="#!"><FaInstagram/></a>
               <a href="#!"><FaTwitter/></a>
-              <a href="#!"><FaLinkedinIn/></a> */}
+              <a href="#!"><FaLinkedinIn/></a>
            </div>
           </div>
           

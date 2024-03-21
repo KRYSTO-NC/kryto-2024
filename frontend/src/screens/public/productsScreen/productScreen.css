@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,400;0,700;1,300;1,400&family=Source+Sans+3:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Asap", sans-serif;
+  height: 100vh;
+  background-color: #f2f2f2;
+  color: #434343;
+  font-size: 1.3rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Bebas Neue", cursive;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* CSS */
+@keyframes flip-in-hor-top {
+  0% {
+    transform: rotateX(-80deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.searchBar input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.filter-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.filter-product select {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 10px;
+}
+.filter-product button {
+  width: 100%;
+  height: 40px;
+  background-color: #bf3636;
+  border-radius: 5px;
+  padding: 5px;
+  flex: 1;
+  margin-right: 10px;
+}
+.filter-product button:hover {
+  transform: scale(0.98);
+}
+
+.no-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.no-result p {
+  margin-bottom: 1rem;
+}
+.no-result button {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  background-color: #bf3636;
+  border-radius: 5px;
+  padding: 5px;
+  flex: 1;
+  margin-right: 10px;
+  margin-top: 2rem;
+}
+.no-result button svg {
+  font-size: 2rem;
+}
+.no-result button:hover {
+  transform: scale(0.98);
+}/*# sourceMappingURL=productScreen.css.map */

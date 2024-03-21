@@ -1,0 +1,361 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,100;1,300&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  background-color: #d8d9e5;
+  color: #32333d;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+  color: #9196CA;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: #32333d;
+  cursor: pointer;
+}
+
+.badge {
+  font-size: 1.1rem;
+  padding: 0.2rem 0.5rem;
+  margin: 0.3rem;
+  text-align: center;
+  background-color: #d8d9e5;
+  color: #32333d;
+  border-radius: 5px;
+}
+.badge.badge-primary {
+  background-color: #9196CA;
+  color: #32333d;
+}
+.badge.badge-secondary {
+  background-color: #7EC7B8;
+  color: #32333d;
+}
+.badge.badge-dark {
+  background-color: #32333d;
+  color: #d8d9e5;
+}
+.badge.badge-success {
+  background-color: #6ad27c;
+  color: #32333d;
+}
+.badge.badge-danger {
+  background-color: #d56060;
+  color: #32333d;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.py-2 {
+  padding: 2rem 0;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.my-3 {
+  margin: 3rem 0;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.py-3 {
+  padding: 3rem 0;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.my-4 {
+  margin: 4rem 0;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.py-4 {
+  padding: 4rem 0;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+.my-5 {
+  margin: 5rem 0;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.py-5 {
+  padding: 5rem 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+}
+.table thead {
+  background-color: #9196CA;
+  color: #d8d9e5;
+}
+.table th, .table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #cfd7dd;
+}
+.table tr:nth-child(even) {
+  background-color: #d8d9e5;
+}
+.table tr:hover {
+  background-color: #cfd7dd;
+}
+
+@keyframes flip-in-hor-top {
+  0% {
+    transform: rotateX(-80deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes vertical-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60% {
+    transform: translateX(10px);
+  }
+  80% {
+    transform: translateX(8px);
+  }
+  90% {
+    transform: translateX(-8px);
+  }
+}
+.product-card {
+  width: 30rem;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin: 1rem 2rem;
+  height: auto;
+  border-radius: 30px;
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #9196CA;
+  color: #32333d;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: 0 10px 0 0;
+  z-index: 150;
+}
+
+.product-thumb {
+  display: flex;
+  justify-content: center;
+  width: 30rem;
+  align-items: center;
+  height: 20rem;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 30px 30px 0 0;
+}
+.product-thumb img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.product-thumb img:hover {
+  transform: scale(1.2);
+  transition: all 0.5s ease-in-out;
+}
+
+.product-details {
+  padding: 1rem;
+  overflow: hidden;
+}
+.product-details h4 a {
+  color: #9196CA;
+  display: block;
+  font-weight: 500;
+  margin-bottom: 1.8rem;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Ajoutez cette ligne pour les trois petits points */
+  white-space: nowrap; /* Ajoutez cette ligne pour empêcher le texte de se replier à la ligne */
+}
+.product-details h4 a:hover {
+  color: #7EC7B8;
+}
+.product-details .card-p {
+  font-size: 1.2rem;
+  margin-bottom: 1.8rem;
+  line-height: 2.2rem;
+  height: 6.7rem;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limite à 3 lignes */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Ajoutez cette ligne pour les trois petits points */
+}
+
+.product-bottom-details {
+  overflow: hidden;
+  border-top: 1px solid #e6e6e6;
+  padding: 1rem 0.3rem;
+  display: flex;
+  background-color: #32333d;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 30px 30px;
+}
+
+.product-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30rem;
+}
+.product-links button, .product-links a {
+  height: 3rem;
+  width: 3rem;
+  background-color: #9196CA;
+  margin: 0 1rem 1rem 0;
+  text-align: center;
+  line-height: 4rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.product-links button svg, .product-links a svg {
+  font-size: 1.6rem;
+}
+.product-links button:hover, .product-links a:hover {
+  background-color: #7EC7B8;
+  transition: all 0.5s ease-in-out;
+}
+
+.out-of-stock {
+  position: absolute;
+  top: 15rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: #d56060;
+  color: white;
+  font-weight: bolder;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.product-price {
+  font-size: 1.8rem;
+  position: relative;
+  color: #9196CA;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+  margin-right: 0.5rem;
+}
+.product-price small {
+  font-size: 60%;
+  bottom: 1rem;
+  position: absolute;
+  color: #9196CA;
+}
+
+.product-category {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #9196CA;
+  margin-bottom: 1.8rem;
+  text-transform: uppercase;
+}/*# sourceMappingURL=productCard.css.map */

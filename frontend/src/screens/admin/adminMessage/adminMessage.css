@@ -1,0 +1,52 @@
+.message-infos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.message-infos .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  margin: 1rem;
+  border: 1px solid #000;
+  border-radius: 10px;
+  width: 32rem;
+  height: 30rem;
+}
+.message-infos h3 {
+  font-size: 2rem;
+  margin: 2rem;
+}
+.message-infos p {
+  width: 100%;
+  font-size: 1.5rem;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #000;
+}
+.message-infos p span {
+  color: black;
+}
+
+.message-content {
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 4rem;
+  margin: 1rem;
+  border-radius: 10px;
+  height: 30rem;
+  background-color: #fff;
+}
+.message-content h4 {
+  font-size: 2rem;
+}
+.message-content p {
+  margin-top: 2rem;
+}/*# sourceMappingURL=adminMessage.css.map */

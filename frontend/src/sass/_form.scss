@@ -60,3 +60,38 @@
     
    }
 }
+
+  
+.image-input{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+      position: relative;
+   
+    align-items: center;
+    height: 10rem;
+    width: 10rem;
+    
+    margin: 2rem;
+    img {
+     height: 10rem;
+     width: 10rem;
+    }
+    button{
+      position: absolute;
+      left: 0;
+     top: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: white;
+     color: red;
+     padding: 0.2rem;
+     height: auto;
+     &:hover{
+      background-color: white;
+       color: red;
+       scale: 1.1;
+    }
+    }
+  }

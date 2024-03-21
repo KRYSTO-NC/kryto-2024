@@ -25,15 +25,26 @@ const UserSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['user', 'revendeur', 'partner'],
+    enum: ['user', 'revendeur', 'partenaire'],
     default: 'user',
     required: true,
   },
   password: {
     type: String,
-    required: [true, 'Please add a password'],
-    minlength: 6,
-    select: false,
+    required: true,
+    validate: {
+      validator: function (value) {
+        // Au moins 8 caractères
+        // Au moins une lettre minuscule
+        // Au moins une lettre majuscule
+        // Au moins un chiffre
+        // Au moins un caractère spécial (parmi !@#$%^&*)
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$/
+        return regex.test(value)
+      },
+      message: (props) =>
+        `Le mot de passe doit contenir au moins 8 caractères, une lettre minuscule, une lettre majuscule, un chiffre et un caractère spécial (!@#$%^&*).`,
+    },
   },
   avatar: {
     type: String,

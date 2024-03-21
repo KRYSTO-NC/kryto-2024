@@ -7,8 +7,8 @@
 .links {
     a {
         &:hover {
-            border-bottom: 2px solid $secondary;
-            color: $secondary;
+            border-bottom: 2px solid $secondary-color;
+            color: $secondary-color;
         }
     }
 }
@@ -21,7 +21,7 @@ header {
 
     padding: 0 2rem;
   
-background-color: #fff;
+background-color:$dark-color;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
 
@@ -37,7 +37,7 @@ background-color: #fff;
 
     a {
         padding: 0 1rem;
-        color: $primary;
+        color: $primary-color;
         font-weight: bolder;
         font-size: 1.5rem;
         display: flex;
@@ -63,7 +63,7 @@ background-color: #fff;
 }
 
 .logo {
-    color: $primary;
+    color: $primary-color;
     font-size: 3rem;
     display: flex;
 
@@ -71,7 +71,7 @@ background-color: #fff;
         margin-left: 1rem;
         font-size: 2rem;
         font-weight: bolder;
-        color: $primary;
+        color: $primary-color;
         text-decoration: none;
     }
 }
@@ -82,7 +82,7 @@ background-color: #fff;
 
     svg {
         font-size: 2rem;
-        color: $primary;
+        color: $primary-color;
         cursor: pointer;
         display: none;
     }
@@ -100,15 +100,15 @@ background-color: #fff;
     .action_btn {
         padding: 1rem 2rem;
         font-size: 1rem;
-        background-color: $primary;
-        color: black;
+        background-color: $primary-color;
+        color: $dark-color;
         border: none;
         border-radius: 10px;
         cursor: pointer;
         transition: all 0.5s ease;
 
         &:hover {
-            background-color: $secondary;
+            background-color: $secondary-color;
            
         }
     }
@@ -123,7 +123,8 @@ background-color: #fff;
     right: 1.5rem;
     top: -600px;
     height: 300px;
-    background-color: rgb(228, 228, 228);
+    background-color: $dark-color;
+    color: white;
     width: 380px;
     z-index: 10000;
     backdrop-filter: blur(15px);
@@ -142,7 +143,7 @@ background-color: #fff;
             font-size: 1.3rem;
 
             &:hover {
-                color: $primary;
+                color: $primary-color;
 
             }
         }

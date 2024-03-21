@@ -1,0 +1,176 @@
+@import '../../../../SASS/reset';
+@import '../../../../SASS/variables';
+@import '../../../../SASS/mixins';
+@import '../../../../SASS/animations';
+
+.product-card {
+  width: 30rem;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin: 1rem 2rem;
+  height: auto;
+  border-radius: 30px;
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: $primary-color;
+  color: $dark-color;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  border-radius: 0  10px 0 0;
+  z-index: 150;
+}
+
+.product-thumb {
+  display: flex;
+  justify-content: center;
+  width: 30rem;
+  align-items: center;
+  height: 20rem;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 30px  30px  0  0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+    // border-radius: 30px  30px  0  0;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.2);
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}
+
+.product-details {
+  padding: 1rem;
+  overflow: hidden;
+ 
+  
+  h4 {
+    a {
+      color: $primary-color;
+      display: block;
+      font-weight: 500;
+      margin-bottom: 1.8rem;
+      text-decoration: none;
+      transition: all 0.5s ease-in-out;
+      overflow: hidden;
+      text-overflow: ellipsis; /* Ajoutez cette ligne pour les trois petits points */
+      white-space: nowrap; /* Ajoutez cette ligne pour empêcher le texte de se replier à la ligne */
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+  .card-p {
+    font-size: 1.2rem;
+    margin-bottom: 1.8rem;
+    line-height: 2.2rem;
+    height: 6.7rem;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limite à 3 lignes */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Ajoutez cette ligne pour les trois petits points */
+  }
+}
+
+.product-bottom-details {
+  overflow: hidden;
+  border-top: 1px solid #e6e6e6;
+  padding: 1rem 0.3rem;
+ 
+  display: flex;
+  background-color: $dark-color;
+  flex-direction: column;
+  justify-content: center;
+    align-items: center;
+   border-radius: 0 0 30px 30px;
+}
+
+.product-links {
+ display: flex;
+
+    justify-content: space-around;
+    align-items: center;
+    width: 30rem;
+
+
+  button, a {
+
+    height: 3rem;
+    width: 3rem;
+    background-color: $primary-color;
+    margin: 0 1rem 1rem 0;
+    text-align: center;
+   
+    line-height: 4rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    svg {
+      font-size: 1.6rem;
+    }
+    &:hover {
+      background-color: $secondary-color;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}
+.out-of-stock {
+  position: absolute;
+  top: 15rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: $danger-color;
+  color: white;
+  font-weight: bolder;
+    font-size: 1.6rem;
+  text-transform: uppercase;
+
+}
+
+.product-price {
+  font-size: 1.8rem;
+  position: relative;
+  color: $primary-color;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+  margin-right: 0.5rem;
+  small {
+    font-size: 60%;
+    bottom: 1rem;
+    position: absolute;
+    color: $primary-color;
+  }
+}
+
+.product-category {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: $primary-color;
+  margin-bottom: 1.8rem;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+

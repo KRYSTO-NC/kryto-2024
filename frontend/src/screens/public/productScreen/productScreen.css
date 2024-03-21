@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,400;0,700;1,300;1,400&family=Source+Sans+3:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Asap", sans-serif;
+  height: 100vh;
+  background-color: #f2f2f2;
+  color: #434343;
+  font-size: 1.3rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Bebas Neue", cursive;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* CSS */
+@keyframes flip-in-hor-top {
+  0% {
+    transform: rotateX(-80deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.product-details h1 {
+  margin: 2rem 0;
+  color: #1B5599;
+  text-align: center;
+  text-transform: uppercase;
+}
+.product-details .description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+}
+.product-details .description .desc-p {
+  font-size: 2rem;
+  color: #190E1C;
+  margin: 1rem;
+  margin: 2rem 0;
+  max-width: 80%;
+  height: auto;
+}
+.product-details .price-range {
+  display: flex;
+  margin: 2rem 0 0 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+.product-details .price-range p {
+  font-size: 3rem;
+  text-align: center;
+}
+.product-details .price-range p span {
+  font-size: 4rem;
+  font-weight: 700;
+}
+.product-details .price-range p i {
+  font-size: 1.4rem;
+}
+@media only screen and (max-width: 768px) {
+  .product-details .description .desc-p {
+    font-size: 1.4rem;
+    max-width: 100%;
+  }
+}
+
+.container-tab {
+  width: 80%;
+}
+.container-tab h2 {
+  font-size: 2.5rem;
+  color: #1B5599;
+  text-align: center;
+}
+
+.product-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}/*# sourceMappingURL=productScreen.css.map */

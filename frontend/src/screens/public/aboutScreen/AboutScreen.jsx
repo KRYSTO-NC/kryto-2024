@@ -1,13 +1,13 @@
 import React from 'react'
 
-const LandingScreen = () => {
+const AboutScreen = () => {
   return (
     <div>
         <h1>
-            LandingScreen
+            A propos de Krysto
         </h1>
     </div>
   )
 }
 
-export default LandingScreen
+export default AboutScreen

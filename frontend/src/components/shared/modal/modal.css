@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,400;0,700;1,300;1,400&family=Source+Sans+3:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,100;1,300&display=swap");
 *,
 ::before,
 ::after {
@@ -13,23 +12,19 @@ html {
 }
 
 body {
-  font-family: "Asap", sans-serif;
+  font-family: "Poppins", sans-serif;
   height: 100vh;
-  background-color: #f2f2f2;
-  color: #434343;
-  font-size: 1.3rem;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Bebas Neue", cursive;
-  font-weight: 600;
-  letter-spacing: 1px;
+  background-color: #d8d9e5;
+  color: #32333d;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 a {
   text-decoration: none;
   color: inherit;
   font-weight: 600;
+  color: #9196CA;
 }
 
 li {
@@ -39,11 +34,142 @@ li {
 button {
   background-color: transparent;
   border: none;
-  color: white;
+  color: #32333d;
   cursor: pointer;
 }
 
-/* CSS */
+.badge {
+  font-size: 1.1rem;
+  padding: 0.2rem 0.5rem;
+  margin: 0.3rem;
+  text-align: center;
+  background-color: #d8d9e5;
+  color: #32333d;
+  border-radius: 5px;
+}
+.badge.badge-primary {
+  background-color: #9196CA;
+  color: #32333d;
+}
+.badge.badge-secondary {
+  background-color: #7EC7B8;
+  color: #32333d;
+}
+.badge.badge-dark {
+  background-color: #32333d;
+  color: #d8d9e5;
+}
+.badge.badge-success {
+  background-color: #6ad27c;
+  color: #32333d;
+}
+.badge.badge-danger {
+  background-color: #d56060;
+  color: #32333d;
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.py-2 {
+  padding: 2rem 0;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.my-3 {
+  margin: 3rem 0;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.py-3 {
+  padding: 3rem 0;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.my-4 {
+  margin: 4rem 0;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.py-4 {
+  padding: 4rem 0;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+.my-5 {
+  margin: 5rem 0;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.py-5 {
+  padding: 5rem 0;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+}
+.table thead {
+  background-color: #9196CA;
+  color: #d8d9e5;
+}
+.table th, .table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #cfd7dd;
+}
+.table tr:nth-child(even) {
+  background-color: #d8d9e5;
+}
+.table tr:hover {
+  background-color: #cfd7dd;
+}
+
 @keyframes flip-in-hor-top {
   0% {
     transform: rotateX(-80deg);
@@ -64,8 +190,25 @@ button {
     opacity: 1;
   }
 }
+@keyframes vertical-shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60% {
+    transform: translateX(10px);
+  }
+  80% {
+    transform: translateX(8px);
+  }
+  90% {
+    transform: translateX(-8px);
+  }
+}
 .overlay {
-  background-color: rgba(37, 37, 37, 0.4078431373);
+  background-color: #d56060;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -104,14 +247,14 @@ button {
   padding: 1rem;
   cursor: pointer;
   transition: all 0.3s;
-  color: #bf3636;
+  color: #d56060;
 }
 .modal .btn-close:hover {
   transform: scale(1.2);
 }
 
 .btn-message {
-  background-color: #bf3636;
+  background-color: #d56060;
   width: 100%;
   border-radius: 10px;
   padding: 0.5rem;
@@ -127,7 +270,7 @@ button {
   font-weight: bold;
   padding: 0.8rem 1rem;
   width: 80%;
-  background-color: #1B5599;
+  background-color: #9196CA;
   color: white;
   border-radius: 20px;
   margin: 1rem auto;
@@ -136,6 +279,6 @@ button {
   color: white;
 }
 .modal-btn:hover {
-  background-color: #E2E035;
+  background-color: #7EC7B8;
   transform: scale(0.98);
 }/*# sourceMappingURL=modal.css.map */

@@ -18,7 +18,7 @@ const App = () => {
 
       <>
         <Navbar />
-        <main className="container">
+        <main>
           <Outlet />
         </main>
         <Footer />

@@ -27,7 +27,22 @@ const LoginScreen = () => {
       if (userInfo.isAdmin) {
         // Redirect to the admin dashboard if the user is an admin
         navigate('/admin/dashboard');
-      } else {
+      } 
+       else if (userInfo.role === 'user'){
+        // Redirect to the user dashboard if the user is not an admin
+        navigate('/dashboard-user');
+      } 
+       else if (userInfo.role === 'revendeur'){
+        // Redirect to the user dashboard if the user is not an admin
+        navigate('/dashboard-revendeur');
+      } 
+       else if (userInfo.role === 'partenaire'){
+        // Redirect to the user dashboard if the user is not an admin
+        navigate('/dashboard-partenaire');
+      } 
+      
+      
+      else {
         // Redirect to the original destination if the user is not an admin
         navigate(redirect);
       }
@@ -45,14 +60,14 @@ const LoginScreen = () => {
     }
   }
   return (
-    <div className='page-container'>
+    <div className='container'>
       <section className="heading">
-        <h1>
+        <h1 className='large'>
           {' '}
           <FaUser /> Se connecter
         </h1>
 
-        <p>Connectez-vous à votre compte</p>
+        <p className='lead'>Connectez-vous à votre compte</p>
       </section>
       <section className="form">
         <form onSubmit={submitHandler}>
@@ -65,13 +80,11 @@ const LoginScreen = () => {
                 <input type="password" id="password" placeholder="Entrer votre mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required/>
             </div>
             <div className="form-group">
-                <button type="submit" className="btn-reverse btn-block" disabled={isLoading}>
+                <button type="submit" className="btn btn-primary" disabled={isLoading}>
                     {isLoading ? 'Connexion...' : 'Connexion'}
                 </button>
             </div>
-            <div className="form-group">
-                <span>Vous n'avez pas de compte? <Link className='link' to={redirect ? `/inscription?redirect=${redirect}` : '/inscription'}>S'inscrire</Link></span>
-            </div>
+         
         </form>
 
       </section>

@@ -9,7 +9,10 @@ import connectDB from './config/db.js'
 import notFound from './middleware/error.js'
 import errorHandler from './middleware/error.js'
 import userRoutes from './routes/userRoutes.js'
+import messageRoutes from './routes/messageRouter.js'
 import uploadRoutes from './routes/uploadRoutes.js'
+import categoryRoutes from './routes/categoryRoutes.js'
+import productRoutes from './routes/productRoutes.js'
 
 const port = process.env.PORT || 5000
 
@@ -27,7 +30,10 @@ app.use(cookieParser())
 
 // Define routes
 app.use('/krysto/api/v1/users', userRoutes)
-app.use('/krysto/api/v1/uploads', uploadRoutes)
+app.use('/krysto/api/v1/upload', uploadRoutes)
+app.use('/krysto/api/v1/categories', categoryRoutes)
+app.use('/krysto/api/v1/products', productRoutes)
+app.use('/krysto/api/v1/messages', messageRoutes)
 
 const __dirname = path.resolve()
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')))

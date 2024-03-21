@@ -30,17 +30,22 @@ const productSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    subname: {
+      type: String,
+      required: true,
+    },
 
     category: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Category',
     },
 
-    refferene: {
+    refference: {
       type: String,
       required: true,
       unique: true,
     },
+
     images: [
       {
         type: String,

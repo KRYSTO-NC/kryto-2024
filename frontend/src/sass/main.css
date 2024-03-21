@@ -258,7 +258,7 @@ button {
   display: inline-block;
   padding: 0.7rem 2rem;
   border: none;
-  background-color: #d8d9e5;
+  background-color: #32333d;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 1.6rem;
@@ -275,15 +275,15 @@ button {
 }
 .btn:hover {
   transform: translateY(-0.2rem);
-  background: #3d3f4b;
+  background: #494a59;
 }
 .btn-primary {
   background-color: #9196CA;
   color: #32333d;
-  color: #d8d9e5;
+  color: white;
 }
 .btn-primary:hover {
-  background-color: #b3b7db;
+  background-color: #a2d6cc;
   color: #32333d;
 }
 .btn-secondary {
@@ -767,7 +767,7 @@ button {
   display: inline-block;
   padding: 0.7rem 2rem;
   border: none;
-  background-color: #d8d9e5;
+  background-color: #32333d;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 1.6rem;
@@ -784,15 +784,15 @@ button {
 }
 .btn:hover {
   transform: translateY(-0.2rem);
-  background: #3d3f4b;
+  background: #494a59;
 }
 .btn-primary {
   background-color: #9196CA;
   color: #32333d;
-  color: #d8d9e5;
+  color: white;
 }
 .btn-primary:hover {
-  background-color: #b3b7db;
+  background-color: #a2d6cc;
   color: #32333d;
 }
 .btn-secondary {
@@ -1069,4 +1069,43 @@ button {
 }
 .form .social-input.instagram {
   color: #e1306c;
+}
+
+.image-input {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  height: 10rem;
+  width: 10rem;
+  margin: 2rem;
+}
+.image-input img {
+  height: 10rem;
+  width: 10rem;
+}
+.image-input button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: red;
+  padding: 0.2rem;
+  height: auto;
+}
+.image-input button:hover {
+  background-color: white;
+  color: red;
+  scale: 1.1;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }/*# sourceMappingURL=main.css.map */

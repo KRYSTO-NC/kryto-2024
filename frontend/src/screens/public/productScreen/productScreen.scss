@@ -1,0 +1,81 @@
+@import '../../../SASS/reset';
+@import '../../../SASS/variables';
+@import '../../../SASS/mixins';
+@import '../../../SASS/animations';
+
+.product-details {
+    h1 {
+        margin: 2rem 0;
+        color: $primary;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .description {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: auto;
+
+        .desc-p {
+            font-size: 2rem;
+            color: $dark;
+            margin: 1rem;
+            margin: 2rem 0;
+            max-width: 80%;
+            height: auto;
+        }
+    }
+
+    .price-range {
+        display: flex;
+        margin: 2rem 0 0 0;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 1rem; // Ajout de rembourrage
+
+        p {
+            font-size: 3rem;
+            text-align: center;
+            span{
+                font-size: 4rem;
+                font-weight: 700;
+            }
+
+            i{
+                font-size: 1.4rem;
+            }
+            
+            
+        }
+    }
+
+    // Ajout de styles pour les appareils mobiles
+    @media only screen and (max-width: 768px) {
+        .description {
+            .desc-p {
+                font-size: 1.4rem; // Ajustez la taille de la police pour les appareils mobiles
+                max-width: 100%; // Assurez-vous que la largeur est de 100% pour éviter le débordement horizontal
+            }
+        }
+    }
+}
+
+.container-tab {
+    width: 80%;
+
+    h2 {
+        font-size: 2.5rem;
+        color: $primary;
+        text-align: center;
+    }
+}
+
+.product-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}

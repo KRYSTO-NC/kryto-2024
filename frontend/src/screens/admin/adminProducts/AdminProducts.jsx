@@ -39,7 +39,7 @@ const AdminProducts = () => {
   };
 
   return (
-    <>
+    <div className='container'>
       <div >
         <div>
           <h1>Produits ({data?.length})</h1>
@@ -95,7 +95,7 @@ const AdminProducts = () => {
           </>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

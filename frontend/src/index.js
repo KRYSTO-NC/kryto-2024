@@ -26,6 +26,11 @@ import AdminUserEdit from './screens/admin/adminUserEdit/AdminUserEdit'
 import AboutScreen from './screens/public/aboutScreen/AboutScreen'
 import AdminMessages from './screens/admin/adminMessages/AdminMessages'
 import AdminMessage from './screens/admin/adminMessage/AdminMessage'
+import AdminDolliProducts from './screens/admin/adminDolliProducts/AdminDolliProducts'
+import AdminDolliProductDetails from './screens/admin/adminDolliProductDetails/AdminDolliProductDetails'
+import AdminThirdParties from './screens/admin/adminThirdParties/AdminThirdParties'
+import AdminThirdPartyDetails from './screens/admin/adminThirdPartyDetails/AdminThirdPartyDetails'
+import AdminWarehouses from './screens/admin/adminWarehouses/AdminWarehouses'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -53,11 +58,25 @@ const router = createBrowserRouter(
         <Route path="/admin/users" element={<AdminUsersList />}></Route>
         <Route path="/admin/messages" element={<AdminMessages />}></Route>
         <Route path="/admin/message/:id" element={<AdminMessage />}></Route>
+        <Route
+          path="/admin/products-dollibar"
+          element={<AdminDolliProducts />}
+        ></Route>
+        <Route
+          path="/admin/product-dollibar/:id"
+          element={<AdminDolliProductDetails />}
+        ></Route>
         <Route path="/admin/user-edit/:id" element={<AdminUserEdit />} />
+        <Route path="/admin/entrepots" element={<AdminWarehouses />} />
 
         <Route
           path="/admin/product-edit/:id"
           element={<AdminProductEditScreen />}
+        ></Route>
+        <Route path="/admin/tiers" element={<AdminThirdParties />}></Route>
+        <Route
+          path="/admin/tier-details/:id"
+          element={<AdminThirdPartyDetails />}
         ></Route>
       </Route>
     </Route>,

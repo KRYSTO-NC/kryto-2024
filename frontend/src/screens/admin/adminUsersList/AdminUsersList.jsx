@@ -24,7 +24,7 @@ const AdminUsersList = () => {
     };
 
   return (
-    <div className='page-container'>
+    <div className='container'>
     <div>
       <h1>Utilisateurs ({users?.length})</h1>
     </div>

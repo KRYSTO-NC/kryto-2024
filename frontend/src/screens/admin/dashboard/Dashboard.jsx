@@ -11,6 +11,9 @@ const Dashboard = () => {
         <Link to={'/admin/users'} className='btn btn-primary'>Gestion des utilisateurs</Link>
         <Link to={'/admin/products'} className='btn btn-primary'>Gestion des produits</Link>
         <Link to={'/admin/messages'} className='btn btn-primary'>Gestion des messages</Link>
+        <Link to={'/admin/products-dollibar'} className='btn btn-dark'>Gestion des Produits dollibar</Link>
+        <Link to={'/admin/tiers'} className='btn btn-dark'>Liste des tiers</Link>
+        <Link to={'/admin/entrepots'} className='btn btn-dark'>Liste des entrepots</Link>
     </div>
   )
 }

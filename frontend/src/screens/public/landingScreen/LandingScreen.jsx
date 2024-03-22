@@ -2,6 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './landingScreen.css'
 import IconsSection from '../../../components/screens/landing/IconsSection'
+import SolutionSection from '../../../components/screens/landing/SolutionSection'
+import SensibilisationSection from '../../../components/screens/landing/SensibilisationSection'
+import Collecte from '../../../components/screens/landing/Collecte'
 
 const LandingScreen = () => {
   return (
@@ -27,7 +30,9 @@ const LandingScreen = () => {
     </div>
 
     <IconsSection/>
-
+    <SolutionSection/>
+    <SensibilisationSection/>
+    <Collecte/>
  
  
   </>

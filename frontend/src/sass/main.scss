@@ -12,3 +12,32 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
+.badge-category{
+    color: $light-color;
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    width: 22rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.not-found-message{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    p{
+        font-size: 2.4rem;
+        color: $danger-color;
+    }
+}
+
+.zero-stock{
+    color: $danger-color;
+    font-weight: bolder;
+}
+.in-stock{
+    color: $success-color;
+    font-weight: bolder;
+}

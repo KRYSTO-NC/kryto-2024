@@ -39,6 +39,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 50px;
+    width: 50px;
+    svg {
+        font-size: 3rem;
+    
+    }
 
 }
 
@@ -50,11 +56,19 @@
 }
 
 .prev-btn {
-    left: 10px;
+    left: 30px;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    color: $dark-color;
+    
+    
 }
 
 .next-btn {
-    right: 10px;
+    right: 30px;
+    background-color: transparent;
+    color: $dark-color;
 }
 
 

@@ -35,10 +35,10 @@ const Slider = ({ product }) => {
               <img src={image} alt={`Image ${index + 1}`} />
             </div>
           ))}
-        <button className="btn navigation-button prev-btn" onClick={prevSlide}>
+        <button className=" navigation-button prev-btn" onClick={prevSlide}>
           <FaArrowAltCircleLeft />
         </button>
-        <button className="btn navigation-button next-btn" onClick={nextSlide}>
+        <button className="navigation-button next-btn" onClick={nextSlide}>
           <FaArrowAltCircleRight />
         </button>
       </div>

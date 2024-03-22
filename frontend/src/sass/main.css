@@ -61,8 +61,8 @@ button {
   color: #d8d9e5;
 }
 .badge.badge-success {
-  background-color: #6ad27c;
-  color: #32333d;
+  background-color: #379546;
+  color: #d8d9e5;
 }
 .badge.badge-danger {
   background-color: #d56060;
@@ -180,6 +180,12 @@ button {
   margin-bottom: 3rem;
   min-height: 100vh;
 }
+.container h1 {
+  font-family: "Poppins", sans-serif;
+  color: #9196CA;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
 
 .x-large {
   font-size: 8rem;
@@ -241,8 +247,8 @@ button {
   color: #d8d9e5;
 }
 .bg-success {
-  background-color: #6ad27c;
-  color: #32333d;
+  background-color: #379546;
+  color: #d8d9e5;
 }
 .bg-danger {
   background-color: #d56060;
@@ -256,6 +262,10 @@ button {
 
 .btn {
   display: inline-block;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 20rem;
   padding: 0.7rem 2rem;
   border: none;
   background-color: #32333d;
@@ -270,8 +280,8 @@ button {
   width: auto;
 }
 .btn svg {
-  margin-right: 0.5rem;
-  font-size: 1.8rem;
+  margin-right: 0.8rem;
+  font-size: 1.9rem;
 }
 .btn:hover {
   transform: translateY(-0.2rem);
@@ -313,13 +323,13 @@ button {
   color: #d8d9e5;
 }
 .btn-success {
-  background-color: #6ad27c;
-  color: #32333d;
+  background-color: #379546;
+  color: #d8d9e5;
   color: #d8d9e5;
 }
 .btn-success:hover {
-  background-color: #91de9e;
-  color: #32333d;
+  background-color: #45ba58;
+  color: #d8d9e5;
 }
 .btn-danger {
   background-color: #d56060;
@@ -329,6 +339,45 @@ button {
 .btn-danger:hover {
   background-color: #7b2121;
   color: #d8d9e5;
+}
+
+.flex-columns .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.flex-columns .column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+.flex-columns .column-1 {
+  height: 40rem;
+}
+.flex-columns .column-1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.column-2 {
+  height: 40rem;
+  padding: 3rem;
+}
+.column-2 h4 {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.column-2 p {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 .dark-overlay {
@@ -362,8 +411,8 @@ button {
   color: #d8d9e5;
 }
 .badge.badge-success {
-  background-color: #6ad27c;
-  color: #32333d;
+  background-color: #379546;
+  color: #d8d9e5;
 }
 .badge.badge-danger {
   background-color: #d56060;
@@ -570,8 +619,8 @@ button {
   color: #d8d9e5;
 }
 .badge.badge-success {
-  background-color: #6ad27c;
-  color: #32333d;
+  background-color: #379546;
+  color: #d8d9e5;
 }
 .badge.badge-danger {
   background-color: #d56060;
@@ -689,6 +738,12 @@ button {
   margin-bottom: 3rem;
   min-height: 100vh;
 }
+.container h1 {
+  font-family: "Poppins", sans-serif;
+  color: #9196CA;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
 
 .x-large {
   font-size: 8rem;
@@ -750,8 +805,8 @@ button {
   color: #d8d9e5;
 }
 .bg-success {
-  background-color: #6ad27c;
-  color: #32333d;
+  background-color: #379546;
+  color: #d8d9e5;
 }
 .bg-danger {
   background-color: #d56060;
@@ -765,6 +820,10 @@ button {
 
 .btn {
   display: inline-block;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 20rem;
   padding: 0.7rem 2rem;
   border: none;
   background-color: #32333d;
@@ -779,8 +838,8 @@ button {
   width: auto;
 }
 .btn svg {
-  margin-right: 0.5rem;
-  font-size: 1.8rem;
+  margin-right: 0.8rem;
+  font-size: 1.9rem;
 }
 .btn:hover {
   transform: translateY(-0.2rem);
@@ -822,13 +881,13 @@ button {
   color: #d8d9e5;
 }
 .btn-success {
-  background-color: #6ad27c;
-  color: #32333d;
+  background-color: #379546;
+  color: #d8d9e5;
   color: #d8d9e5;
 }
 .btn-success:hover {
-  background-color: #91de9e;
-  color: #32333d;
+  background-color: #45ba58;
+  color: #d8d9e5;
 }
 .btn-danger {
   background-color: #d56060;
@@ -838,6 +897,45 @@ button {
 .btn-danger:hover {
   background-color: #7b2121;
   color: #d8d9e5;
+}
+
+.flex-columns .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.flex-columns .column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+.flex-columns .column-1 {
+  height: 40rem;
+}
+.flex-columns .column-1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.column-2 {
+  height: 40rem;
+  padding: 3rem;
+}
+.column-2 h4 {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+.column-2 p {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 .dark-overlay {
@@ -871,8 +969,8 @@ button {
   color: #d8d9e5;
 }
 .badge.badge-success {
-  background-color: #6ad27c;
-  color: #32333d;
+  background-color: #379546;
+  color: #d8d9e5;
 }
 .badge.badge-danger {
   background-color: #d56060;
@@ -1108,4 +1206,34 @@ button {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.badge-category {
+  color: #d8d9e5;
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  width: 22rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.not-found-message {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.not-found-message p {
+  font-size: 2.4rem;
+  color: #d56060;
+}
+
+.zero-stock {
+  color: #d56060;
+  font-weight: bolder;
+}
+
+.in-stock {
+  color: #379546;
+  font-weight: bolder;
 }/*# sourceMappingURL=main.css.map */

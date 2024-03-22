@@ -87,7 +87,7 @@ const ProductScreen = () => {
       ) : error ? (
         <div>Error: {error?.data?.message}</div>
       ) : (
-        <div className="page-container">
+        <div className="container">
           <Slider product={product} />
           <div className="price"></div>
           <div className="product-details">
@@ -189,7 +189,7 @@ const ProductScreen = () => {
 
           <div className="container-tab">
             <h2>Caractéristiques de ce produits</h2>
-            <table className="options">
+            <table className="table">
               <tbody>
                 {product.options.map((option, index) => (
                   <tr key={index}>

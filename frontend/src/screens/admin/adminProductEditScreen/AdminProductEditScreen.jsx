@@ -40,6 +40,7 @@ const AdminProductEditScreen = () => {
   const [name, setName] = useState('')
   const [subname, setSubname] = useState('')
   const [refference, setRefference] = useState('')
+  const [dolliId, setDolliId] = useState('')
   const [price, setPrice] = useState(0)
   const [imagesArray, setImagesArray] = useState([])
 
@@ -80,6 +81,7 @@ const AdminProductEditScreen = () => {
         refference,
       subname,
         price,
+        dolliId,
         images: imagesArray,
 
         category: selectedCategory,
@@ -129,6 +131,7 @@ const AdminProductEditScreen = () => {
     setRefference(product?.refference || '')
     setPrice(product?.price || 0)
     setImagesArray(product?.images || [])
+    setDolliId(product?.dolliId || '')
   
     setSelectedCategory(product?.category || '')
     setCountInStock(product?.countInStock || 0)
@@ -140,7 +143,7 @@ const AdminProductEditScreen = () => {
 
   return (
     <>
-      <section>
+      <section className='container'>
         {loadingUpdate && <p>Loading...</p>}
         {isLoading ? (
           <p>Loading...</p>
@@ -170,6 +173,16 @@ const AdminProductEditScreen = () => {
                   placeholder="Enter subname"
                   value={subname}
                   onChange={(e) => setSubname(e.target.value)}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="subname">ID dolibarr:</label>
+                <input
+                  type="text"
+                  id="dolliId"
+                  placeholder="Enter dolibarr id"
+                  value={dolliId}
+                  onChange={(e) => setDolliId(e.target.value)}
                 />
               </div>
               <div className="form-group">

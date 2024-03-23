@@ -31,6 +31,8 @@ import AdminDolliProductDetails from './screens/admin/adminDolliProductDetails/A
 import AdminThirdParties from './screens/admin/adminThirdParties/AdminThirdParties'
 import AdminThirdPartyDetails from './screens/admin/adminThirdPartyDetails/AdminThirdPartyDetails'
 import AdminWarehouses from './screens/admin/adminWarehouses/AdminWarehouses'
+import AdminStockMouvements from './screens/admin/adminStockMouvements/AdminStockMouvements'
+import AdminSellBord from './screens/admin/adminSellBoard/AdminSellBord'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -68,6 +70,10 @@ const router = createBrowserRouter(
         ></Route>
         <Route path="/admin/user-edit/:id" element={<AdminUserEdit />} />
         <Route path="/admin/entrepots" element={<AdminWarehouses />} />
+        <Route
+          path="/admin/mouvements-stock"
+          element={<AdminStockMouvements />}
+        />
 
         <Route
           path="/admin/product-edit/:id"
@@ -77,6 +83,10 @@ const router = createBrowserRouter(
         <Route
           path="/admin/tier-details/:id"
           element={<AdminThirdPartyDetails />}
+        ></Route>
+        <Route
+          path="/admin/table-des-ventes"
+          element={<AdminSellBord />}
         ></Route>
       </Route>
     </Route>,

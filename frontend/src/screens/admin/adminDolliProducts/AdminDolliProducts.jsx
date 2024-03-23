@@ -27,15 +27,18 @@ const AdminDolliProducts = () => {
     }
   };
 
+  // Calculer la valeur totale du stock pour tous les produits
+  const totalStockValue = data && data.length > 0 ? data.reduce((acc, product) => acc + calculateStockValue(product), 0) : 0;
+
   return (
     <div className='container'>
       <h1>Produits Krysto</h1>
+      <div className="total-stock-value medium">Valeur totale du stock: {totalStockValue} XPF</div>
       {/* Menu déroulant pour filtrer les catégories */}
       <div className="form">
         <div className="form-group">
           <select value={selectedCategory} onChange={handleCategoryChange}>
             <option value="0">Tous les produits</option>
-            <option value="41">Consomables</option>
             <option value="34">Productions - Mode</option>
             <option value="37">Productions - Bazar</option>
             <option value="35">Productions - Jeux & Education</option>
@@ -53,14 +56,15 @@ const AdminDolliProducts = () => {
         </p>
       ) : (
         <>
+          <div className="total-stock-value">Valeur totale du stock: {totalStockValue} XPF</div>
           <table className="table">
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Refference</th>
                 <th>Nom</th>
-                <th>Prix de vente</th>
-                <th>Prix de vente Min</th>
+                <th>Prix Public</th>
+                <th>Prix PRO</th>
                 <th>En stock</th>
                 <th>VAL stock</th>
                 <th></th>

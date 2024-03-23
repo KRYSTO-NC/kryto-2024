@@ -10,9 +10,12 @@ export const dolliProductApiSlice = apiSlice.injectEndpoints({
         if (category) {
           params = `category=${category}`
         }
+        // Ajoutez le paramètre "sqlfilters" pour filtrer les articles à vendre
+        params += params ? '&' : ''
+        params += 'sqlfilters=(t.tosell:=:1)'
+
         return {
           url: `${DOLIBAR_URL}/products?${params}&limit=100&mode=1`,
-          // url: `${DOLIBAR_URL}/products?${params}&limit=100&variant_filter=3`,
           headers: {
             DOLAPIKEY: DOLIBARR_API_KEY,
           },
@@ -41,6 +44,16 @@ export const dolliProductApiSlice = apiSlice.injectEndpoints({
       }),
       keepUnusedDataFor: 5,
     }),
+    getDolliProductDocuments: builder.query({
+      query: (id) => ({
+        url: ` https://crm.krysto.nc/api/index.php/documents?modulepart=product&id=${id}`,
+        headers: {
+          DOLAPIKEY: DOLIBARR_API_KEY,
+        },
+      }),
+      keepUnusedDataFor: 5,
+    }),
+
     getDolliProductStock: builder.query({
       query: (id) => ({
         url: `${DOLIBAR_URL}/products/${id}/stock`,
@@ -58,5 +71,6 @@ export const {
   useGetDolliProductCategoriesQuery,
   useGetDolliProductDetailsQuery,
   useGetDolliProductStockQuery,
+  useGetDolliProductDocumentsQuery,
   // Ajoutez d'autres exports ici pour les autres queries, mutations, etc.
 } = dolliProductApiSlice

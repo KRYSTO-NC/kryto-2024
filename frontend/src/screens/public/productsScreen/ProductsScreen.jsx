@@ -66,7 +66,7 @@ const ProductsScreen = () => {
       >
         Aucun produit ne correspond à votre critère ... <br />
         <span>
-          Vous pouvez chercher "bateau", "camping", "pelleteuse", ect.{' '}
+          Vous pouvez chercher "Peignes", "Jenga", "Bagues", ect.{' '}
         </span>
         <button onClick={resetFilters}>
           {' '}

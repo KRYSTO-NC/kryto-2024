@@ -14,6 +14,7 @@ const Dashboard = () => {
         <Link to={'/admin/products-dollibar'} className='btn btn-dark'>Gestion des Produits dollibar</Link>
         <Link to={'/admin/tiers'} className='btn btn-dark'>Liste des tiers</Link>
         <Link to={'/admin/entrepots'} className='btn btn-dark'>Liste des entrepots</Link>
+        <Link to={'/admin/mouvements-stock'} className='btn btn-dark'>Mouvements de stock</Link>
     </div>
   )
 }

@@ -13,6 +13,10 @@ export const apiSlice = createApi({
     'Message',
     'SubCategory',
     'Category',
+    'Contact',
+    'PlasticType',
+    'RecyclableProduct',
+    'PlasticColor',
   ],
   endpoints: (builder) => ({}),
 })

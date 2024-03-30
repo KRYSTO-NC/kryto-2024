@@ -33,6 +33,14 @@ import AdminThirdPartyDetails from './screens/admin/adminThirdPartyDetails/Admin
 import AdminWarehouses from './screens/admin/adminWarehouses/AdminWarehouses'
 import AdminStockMouvements from './screens/admin/adminStockMouvements/AdminStockMouvements'
 import AdminSellBord from './screens/admin/adminSellBoard/AdminSellBord'
+import AdminContacts from './screens/admin/adminContacts/AdminContacts'
+import AdminPlasticTypes from './screens/admin/adminPlasticTypes/AdminPlasticTypes'
+import AdminPlasticTypeDetails from './screens/admin/adminPlasticTypeDetails/AdminPlasticTypeDetails'
+import AdminRecyclableProducts from './screens/admin/adminRecyclableProducts/AdminRecyclableProducts'
+import AdminRecyclableProductDetails from './screens/admin/adminRecyclableProductDetails/AdminRecyclableProductDetails'
+import AdminRecyclableProductEdit from './screens/admin/adminRecyclableProductEdit/AdminRecyclableProductEdit'
+import AdminPlasticColors from './screens/admin/adminPlasticColors/AdminPlasticColors'
+import AdminPlasticTypeEdit from './screens/admin/adminPlasticTypeEdit/AdminPlasticTypeEdit'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -57,9 +65,37 @@ const router = createBrowserRouter(
       <Route path="" element={<AdminRoute />}>
         <Route path="/admin/dashboard" element={<Dashboard />}></Route>
         <Route path="/admin/products" element={<AdminProducts />}></Route>
+        <Route
+          path="/admin/recyclable-products"
+          element={<AdminRecyclableProducts />}
+        ></Route>
+        <Route
+          path="/admin/recyclable-product/:id"
+          element={<AdminRecyclableProductDetails />}
+        ></Route>
+        <Route
+          path="/admin/recyclable-product/:id/edit"
+          element={<AdminRecyclableProductEdit />}
+        ></Route>
+        <Route
+          path="/admin/plastic-type/:id/edit"
+          element={<AdminPlasticTypeEdit />}
+        ></Route>
         <Route path="/admin/users" element={<AdminUsersList />}></Route>
         <Route path="/admin/messages" element={<AdminMessages />}></Route>
         <Route path="/admin/message/:id" element={<AdminMessage />}></Route>
+        <Route
+          path="/admin/plastic-types"
+          element={<AdminPlasticTypes />}
+        ></Route>
+        <Route
+          path="/admin/plastic-colors"
+          element={<AdminPlasticColors />}
+        ></Route>
+        <Route
+          path="/admin/plastic-type/:id"
+          element={<AdminPlasticTypeDetails />}
+        ></Route>
         <Route
           path="/admin/products-dollibar"
           element={<AdminDolliProducts />}
@@ -74,6 +110,7 @@ const router = createBrowserRouter(
           path="/admin/mouvements-stock"
           element={<AdminStockMouvements />}
         />
+        <Route path="/admin/contacts" element={<AdminContacts />} />
 
         <Route
           path="/admin/product-edit/:id"

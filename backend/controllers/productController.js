@@ -20,7 +20,7 @@ const getProducts = asyncHandler(async (req, res) => {
 
   const count = await Product.countDocuments({ ...keyword })
   const products = await Product.find({ ...keyword })
-    .populate('category subCategory')
+    .populate('category')
     .limit(pageSize)
     .skip(pageSize * (page - 1))
 
@@ -60,6 +60,9 @@ const createProduct = asyncHandler(async (req, res) => {
     images: ['/uploads/images-sample.png'],
     category: '6100f353b2b07b0c14a28f12',
     countInStock: 0,
+    options: [],
+    rating: 0,
+    dolliId: '123456',
     numReviews: 0,
   })
 
@@ -75,6 +78,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     name,
     subname,
     price,
+    dolliId,
     description,
     refference,
     images,
@@ -91,6 +95,7 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.description = description
     product.images = images
     product.category = category
+    product.dolliId = dolliId
     product.refference = refference
 
     product.countInStock = countInStock

@@ -26,6 +26,11 @@ const productSchema = new mongoose.Schema(
       required: true,
       ref: 'User',
     },
+    dolliId: {
+      type: String,
+      required: true,
+      unique: true,
+    },
     name: {
       type: String,
       required: true,

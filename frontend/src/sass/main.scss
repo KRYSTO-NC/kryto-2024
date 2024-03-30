@@ -60,3 +60,47 @@
         }
     }
 }
+
+.sale-details {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .medium {
+    font-size: 1.2rem;
+  }
+  
+  .total-price {
+    font-weight: bold;
+    margin-bottom: 1rem; /* Ajout d'une marge en bas */
+  }
+  
+  .product-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .product-list li {
+    margin-bottom: 1rem; /* Ajout d'une marge en bas */
+  }
+  
+  .product-label {
+    font-weight: bold;
+  }
+  
+  .quantity {
+    margin-left: 1rem;
+  }
+  
+  .subtotal {
+    margin-left: 1rem;
+    color: #888;
+  }
+  
+  .btn-generate-pdf {
+    margin-top: 1rem;
+  }
+  

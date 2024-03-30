@@ -1,0 +1,14 @@
+@charset "UTF-8";
+.imgs-recyclableProduct {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imgs-recyclableProduct img {
+  width: 200px; /* Ajustez la taille selon vos préférences */
+  height: 200px; /* Ajustez la taille selon vos préférences */
+  margin: 10px; /* Espace entre les images */
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=adminRecyclableProduct.css.map */

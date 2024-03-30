@@ -6,7 +6,6 @@ import { toast } from 'react-toastify';
 const StockMouvementForm = ({ productId, onSuccess }) => {
   const { data: warehouses, isLoading, error } = useGetWarehousesQuery();
   const [quantity, setQuantity] = useState(0);
-  const [movementType, setMovementType] = useState('in');
   const [selectedWarehouseId, setSelectedWarehouseId] = useState('');
   const [
     addStockMovement,
@@ -17,9 +16,7 @@ const StockMouvementForm = ({ productId, onSuccess }) => {
     setQuantity(parseInt(event.target.value));
   };
 
-  const handleMovementTypeChange = (event) => {
-    setMovementType(event.target.value);
-  };
+
 
   const handleWarehouseChange = (event) => {
     setSelectedWarehouseId(event.target.value);
@@ -58,7 +55,7 @@ const StockMouvementForm = ({ productId, onSuccess }) => {
       {error && <p>Une erreur est survenue : {error.message}</p>}
       <section>
         <div className="form">
-          <h2>Entrer un mouvement de stock</h2>
+          <h2>Entrer un mouvement de stock (ajout seulement)</h2>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="quantity">Quantité</label>
@@ -70,20 +67,6 @@ const StockMouvementForm = ({ productId, onSuccess }) => {
                 onChange={handleQuantityChange}
                 required
               />
-            </div>
-            <div className="form-group">
-              <label htmlFor="movement_type">Type de mouvement</label>
-              <select
-                id="movement_type"
-                name="movement_type"
-                value={movementType}
-                onChange={handleMovementTypeChange}
-                required
-              >
-                <option value="0">Entrée (Augmentation du stock)</option>
-                <option value="1">Sortie (Diminution du stock)</option>
-                {/* Ajoutez d'autres options si nécessaire */}
-              </select>
             </div>
             <div className="form-group">
               <label htmlFor="warehouse_id">Entrepôt</label>

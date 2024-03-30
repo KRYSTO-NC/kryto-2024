@@ -1,32 +1,72 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { useGetPlasticTypeQuery, useUpdatePlasticTypeMutation, useUploadPlasticTypeImageMutation } from '../../../slices/plasticTypesApiSlice';
+import {
+  useGetRecyclableProductDetailsQuery,
+  useUpdateRecyclableProductMutation,
+  useUploadRecyclabeProductImageMutation,
+} from '../../../slices/recyclableProductsApiSlice';
+import { useGetPlasticTypesQuery } from '../../../slices/plasticTypesApiSlice';
+import { useGetPlasticColorsQuery } from '../../../slices/plasticColorsApiSlice';
 import { FaTimes } from 'react-icons/fa';
 
-const AdminPlasticTypeEdit = () => {
-  const { id: plasticTypeId } = useParams();
+const AdminRecyclableProductEdit = () => {
+  const { id: productId } = useParams();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({});
   const [loadingUpdate, setLoadingUpdate] = useState(false);
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [loadingUpload, setLoadingUpload] = useState(false);
+  const [selectedPlasticTypes, setSelectedPlasticTypes] = useState([]);
+  const [selectedPlasticColors, setSelectedPlasticColors] = useState([]);
   const [imagesArray, setImagesArray] = useState([]);
+  const [loadingUpload, setLoadingUpload] = useState(false);
 
-  const { data: plasticType, isLoading, error, refetch } = useGetPlasticTypeQuery(plasticTypeId);
-  const [updatePlasticType] = useUpdatePlasticTypeMutation();
-  const [uploadPlasticTypeImage] = useUploadPlasticTypeImageMutation();
+  const {
+    data: plasticTypes,
+    isLoading: isLoadingPlasticTypes,
+    error: errorPlasticTypes,
+  } = useGetPlasticTypesQuery();
+  
+  const {
+    data: plasticColors,
+    isLoading: isLoadingPlasticColors,
+    error: errorPlasticColors,
+  } = useGetPlasticColorsQuery();
+
+  const {
+    data: recyclableProduct,
+    isLoading: isLoadingRecyclableProduct,
+    error: errorRecyclableProduct,
+    refetch,
+  } = useGetRecyclableProductDetailsQuery(productId);
+
+  const [updateRecyclableProduct] = useUpdateRecyclableProductMutation();
+  const [uploadRecyclableProductImage] = useUploadRecyclabeProductImageMutation();
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
+    const newValue = type === 'checkbox' ? checked : value;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: newValue,
     });
   };
 
-  const handleFileChange = (e) => {
-    setSelectedFile(e.target.files[0]);
+  const handlePlasticTypeChange = (e) => {
+    const selectedOptions = Array.from(e.target.selectedOptions, (option) => option.value);
+    setSelectedPlasticTypes(selectedOptions);
+    setFormData({
+      ...formData,
+      plasticTypes: selectedOptions,
+    });
+  };
+
+  const handlePlasticColorChange = (e) => {
+    const selectedOptions = Array.from(e.target.selectedOptions, (option) => option.value);
+    setSelectedPlasticColors(selectedOptions);
+    setFormData({
+      ...formData,
+      plasticColors: selectedOptions,
+    });
   };
 
   const uploadFileHandler = async (e) => {
@@ -40,7 +80,7 @@ const AdminPlasticTypeEdit = () => {
 
     try {
       setLoadingUpload(true);
-      const res = await uploadPlasticTypeImage(formData).unwrap();
+      const res = await uploadRecyclableProductImage(formData).unwrap();
       if (res && res.images && res.images.length > 0) {
         setImagesArray((prevImages) => [...prevImages, ...res.images]);
         toast.success(res.message || "Images téléchargées avec succès");
@@ -65,71 +105,118 @@ const AdminPlasticTypeEdit = () => {
     setLoadingUpdate(true);
 
     try {
-      await updatePlasticType({ ...formData, images: imagesArray });
-      toast.success('Le type de plastique a été mis à jour avec succès');
+      if (!productId) {
+        console.error('productId is undefined:', productId);
+        return;
+      }
+
+      const updatedFormData = {
+        ...formData,
+        images: imagesArray,
+      };
+
+      await updateRecyclableProduct({ productId, ...updatedFormData });
+      setFormData({});
+      toast.success('Le produit recyclable a été mis à jour avec succès');
       refetch();
-      navigate('/admin/plastic-types');
+      navigate('/admin/recyclable-products');
     } catch (error) {
       toast.error(
         error.message ||
-          'Une erreur est survenue lors de la mise à jour du type de plastique'
+          'Une erreur est survenue lors de la mise à jour du produit recyclable'
       );
     } finally {
       setLoadingUpdate(false);
-      setSelectedFile(null);
     }
   };
 
   useEffect(() => {
-    if (plasticType) {
-      setFormData(plasticType);
-      setImagesArray(plasticType.images || []);
+    if (recyclableProduct) {
+      setFormData(recyclableProduct);
+      setSelectedPlasticTypes(recyclableProduct.plasticTypes || []);
+      setSelectedPlasticColors(recyclableProduct.plasticColors || []);
+      setImagesArray(recyclableProduct.images || []);
     }
-  }, [plasticType]);
+  }, [recyclableProduct]);
 
-  if (isLoading) {
+  if (isLoadingRecyclableProduct || isLoadingPlasticTypes || isLoadingPlasticColors) {
     return <div>Loading...</div>;
   }
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
+  if (errorRecyclableProduct || errorPlasticTypes || errorPlasticColors) {
+    return (
+      <div>
+        Error: {errorRecyclableProduct?.message || errorPlasticTypes?.message || errorPlasticColors?.message}
+      </div>
+    );
   }
-
   return (
     <div className='container'>
-      <h2>Edit Plastic Type</h2>
+      <h2>Edit Recyclable Product</h2>
       <form className='form' onSubmit={handleSubmit}>
-        <label>SigleFr:</label>
+        <label>Name:</label>
         <input
           type='text'
-          name='sigleFr'
-          value={formData.sigleFr || ''}
+          name='name'
+          value={formData.name || ''}
           onChange={handleInputChange}
         />
 
-        <label>SigleEn:</label>
+        <label>Generic Name:</label>
         <input
           type='text'
-          name='sigleEn'
-          value={formData.sigleEn || ''}
+          name='genericName'
+          value={formData.genericName || ''}
+          onChange={handleInputChange}
+        />
+        <label>Catégorie:</label>
+        <select
+          name='category'
+          value={formData.category || ''}
+          onChange={handleInputChange}
+        >
+          <option value='Produits ménagers'>Produits ménagers</option>
+          <option value='Soins du corps'>Soins du corps</option>
+          <option value='Alimentaires'>Alimentaires</option>
+          <option value='Divers'>Divers</option>
+        </select>
+        <label>Recyclable By Krysto:</label>
+        <input
+          type='checkbox'
+          name='recyclableByKrysto'
+          checked={formData.recyclableByKrysto || false}
           onChange={handleInputChange}
         />
 
-        <label>Scientific Name Fr:</label>
-        <input
-          type='text'
-          name='scientificNameFr'
-          value={formData.scientificNameFr || ''}
-          onChange={handleInputChange}
-        />
+        <label>Plastic Types:</label>
+        <select
+          name='plasticTypes'
+          value={selectedPlasticTypes}
+          onChange={handlePlasticTypeChange}
+          multiple
+        >
+          {plasticTypes.data.map((type) => (
+            <option key={type._id} value={type._id}>
+              {type.sigleFr}
+            </option>
+          ))}
+        </select>
+        <label>Plastic Colors:</label>
+        <select
+          name='plasticColors'
+          value={selectedPlasticColors}
+          onChange={handlePlasticColorChange}
+          multiple
+        >
+          {plasticColors?.map((color) => (
+            <option key={color._id} value={color._id}>
+              {color.name}
+            </option>
+          ))}
+        </select>
 
-        <label>Scientific Name En:</label>
-        <input
-          type='text'
-          name='scientificNameEn'
-          value={formData.scientificNameEn || ''}
-          onChange={handleInputChange}
-        />
+
+
 
         <label>Description:</label>
         <input
@@ -139,71 +226,51 @@ const AdminPlasticTypeEdit = () => {
           onChange={handleInputChange}
         />
 
-        <label>Injection Temperature:</label>
+
+        <label>Transportation:</label>
+        <select
+          name='transportation'
+          value={formData.transportation || ''}
+          onChange={handleInputChange}
+        >
+          <option value='Fabriquée en Nouvelle-Calédonie'>Fabriquée en Nouvelle-Calédonie</option>
+          <option value='Transformée en Nouvelle-Calédonie'>Transformée en Nouvelle-Calédonie</option>
+          <option value='Inconnu'>Inconnu</option>
+          <option value='Importée'>Importée</option>
+        </select>
+
+        <label>Content:</label>
+        <input
+            type='text'
+            name='content'
+            value={formData.content || ''}
+            onChange={handleInputChange}
+        />
+
+        <label>Brand:</label>
         <input
           type='text'
-          name='injectionTemperature'
-          value={formData.injectionTemperature || ''}
+          name='brand'
+          value={formData.brand || ''}
           onChange={handleInputChange}
         />
 
-        <label>Density:</label>
-        <input
-          type='number'
-          name='density'
-          value={formData.density || ''}
-          onChange={handleInputChange}
-        />
-
-        <label>Melting Point:</label>
-        <input
-          type='number'
-          name='meltingPoint'
-          value={formData.meltingPoint || ''}
-          onChange={handleInputChange}
-        />
-
-        <label>Heat Resistance:</label>
+        <label>Barcode:</label>
         <input
           type='text'
-          name='heatResistance'
-          value={formData.heatResistance || ''}
+          name='barcode'
+          value={formData.barcode || ''}
           onChange={handleInputChange}
         />
 
-        <label>Chemical Resistance:</label>
+        <label>Remarque:</label>
         <input
           type='text'
-          name='chemicalResistance'
-          value={formData.chemicalResistance || ''}
+          name='remarque'
+          value={formData.remarque || ''}
           onChange={handleInputChange}
         />
-
-        <label>Rigidity:</label>
-        <input
-          type='text'
-          name='rigidity'
-          value={formData.rigidity || ''}
-          onChange={handleInputChange}
-        />
-
-        <label>Toxicity:</label>
-        <input
-          type='text'
-          name='toxicity'
-          value={formData.toxicity || ''}
-          onChange={handleInputChange}
-        />
-
-        <label>Environmental Impact:</label>
-        <input
-          type='text'
-          name='environmentalImpact'
-          value={formData.environmentalImpact || ''}
-          onChange={handleInputChange}
-        />
-        
-        <div className="form-group">
+ <div className="form-group">
           <label htmlFor="images">Images:</label>
           {imagesArray.map((image, index) => (
             <div key={index} className="image-input">
@@ -234,4 +301,4 @@ const AdminPlasticTypeEdit = () => {
   );
 };
 
-export default AdminPlasticTypeEdit;
+export default AdminRecyclableProductEdit;

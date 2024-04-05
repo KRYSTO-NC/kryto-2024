@@ -5,7 +5,6 @@ const getAllRecyclableProducts = asyncHandler(async (req, res) => {
   const recyclableProducts = await RecyclableProduct.find({})
     .populate({
       path: 'plasticTypes',
-      select: 'sigleFr',
     })
     .populate({
       path: 'plasticColors',

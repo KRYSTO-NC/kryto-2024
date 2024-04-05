@@ -23,10 +23,12 @@ const PlasticTypeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  images: {
-    type: String,
-    default: 'no-photo.png',
-  },
+  images: [
+    {
+      type: String,
+    },
+  ],
+
   flotability: {
     alcohol: {
       type: Boolean,

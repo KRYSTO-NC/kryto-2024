@@ -31,7 +31,6 @@ const plasticTypes = [
     scientificNameEn: 'High-Density Polyethylene',
     description:
       'Le HDPE est un plastique largement utilisé dans la fabrication de bouteilles de lait, de sacs en plastique résistants et de conteneurs pour produits chimiques. Il est apprécié pour sa haute densité, ce qui lui confère une excellente résistance aux chocs et une bonne résistance chimique. Le HDPE est également connu pour sa capacité à être recyclé, ce qui en fait un choix populaire pour les applications nécessitant une résistance et une durabilité élevées.',
-    icone: 'hdpe.png',
     flotability: {
       alcohol: false,
       vegetableOil: false,
@@ -79,7 +78,6 @@ const plasticTypes = [
     scientificNameEn: 'Low-Density Polyethylene',
     description:
       " Le LDPE est un type de plastique utilisé principalement pour la fabrication de sacs en plastique, de films d'emballage et de revêtements. Grâce à sa flexibilité et à sa résistance à la déchirure, le LDPE est largement utilisé pour les emballages souples tels que les sacs de transport, les sacs poubelles et les enveloppes à bulles. Il est également utilisé comme revêtement protecteur pour diverses surfaces. Le LDPE est apprécié pour sa facilité de recyclage, ce qui en fait un choix plus respectueux de l'environnement pour certains emballages.",
-    icone: 'ldpe.png',
     flotability: {
       alcohol: true,
       vegetableOil: false,
@@ -103,7 +101,6 @@ const plasticTypes = [
     scientificNameEn: 'Polypropylene',
     description:
       "Le PP est un plastique largement utilisé dans l'industrie alimentaire pour les emballages alimentaires, tels que les contenants, les barquettes et les films d'emballage. Il est également utilisé pour fabriquer des bouchons de bouteilles, des couvercles et des capsules grâce à sa résistance aux produits chimiques et à la chaleur. En dehors du secteur alimentaire, le PP est utilisé pour produire des fibres textiles, notamment pour les tapis, les tissus d'ameublement et les textiles industriels. Le PP est apprécié pour sa légèreté, sa rigidité et sa capacité à résister aux chocs.",
-    icone: 'pp.png',
     flotability: {
       alcohol: true,
       vegetableOil: true,
@@ -127,7 +124,6 @@ const plasticTypes = [
     scientificNameEn: 'Polystyrene',
     description:
       "Le PS est un plastique communément utilisé dans la fabrication de gobelets en plastique jetables, d'emballages d'œufs pour le transport et la protection des œufs, ainsi que dans les matériaux d'isolation pour les constructions. Le PS est apprécié pour son faible coût, sa légèreté et ses propriétés isolantes. Il est souvent utilisé dans les produits à usage unique en raison de sa facilité de moulage et de sa résistance aux chocs. Cependant, en raison de son faible taux de recyclage et de sa lente dégradation dans l'environnement, le PS est parfois critiqué pour ses effets négatifs sur l'écosystème.",
-    icone: 'ps.png',
     flotability: {
       alcohol: false,
       vegetableOil: false,
@@ -151,7 +147,6 @@ const plasticTypes = [
     scientificNameEn: 'Other',
     description:
       "Cette catégorie regroupe des types de plastique qui ne correspondent pas aux catégories standard énumérées précédemment. Ces plastiques peuvent être des mélanges ou des compositions spéciales, ou ils peuvent avoir des propriétés uniques qui ne les classent pas clairement dans les catégories traditionnelles. En raison de leur diversité, les propriétés spécifiques de ces plastiques peuvent varier considérablement, y compris leur température d'injection, leur densité, leur point de fusion, leur résistance à la chaleur, leur résistance chimique, leur rigidité, leur toxicité et leur impact environnemental. Il est essentiel de connaître et de gérer correctement ces plastiques, car leur recyclage et leur élimination peuvent également être spécifiques à chaque type.",
-    icone: 'other.png',
     flotability: {
       alcohol: false,
       vegetableOil: false,

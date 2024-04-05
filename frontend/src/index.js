@@ -41,6 +41,8 @@ import AdminRecyclableProductDetails from './screens/admin/adminRecyclableProduc
 import AdminRecyclableProductEdit from './screens/admin/adminRecyclableProductEdit/AdminRecyclableProductEdit'
 import AdminPlasticColors from './screens/admin/adminPlasticColors/AdminPlasticColors'
 import AdminPlasticTypeEdit from './screens/admin/adminPlasticTypeEdit/AdminPlasticTypeEdit'
+import PlasticExplainScreen from './screens/public/plasticExplainScreen/PlasticExplainScreen'
+import RecyclableProducts from './screens/public/recyclableProducts/RecyclableProducts'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -53,6 +55,11 @@ const router = createBrowserRouter(
       <Route path="/nos-produits" element={<ProductsScreen />}></Route>
       <Route path="/a-propos" element={<AboutScreen />}></Route>
       <Route path="/produit/:id" element={<ProductScreen />}></Route>
+      <Route path="/les-plastiques" element={<PlasticExplainScreen />}></Route>
+      <Route
+        path="/les-produits-recyclable"
+        element={<RecyclableProducts />}
+      ></Route>
 
       {/* Registered users */}
       <Route path="" element={<PrivateRoute />}>

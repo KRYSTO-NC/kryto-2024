@@ -8,6 +8,7 @@ import {
   FaStop,
   FaProductHunt,
   FaEnvelope,
+  FaRecycle,
 } from 'react-icons/fa'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
@@ -119,6 +120,9 @@ const Navbar = () => {
               <li>
                 <NavLink to="/nos-produits" label="Nos produits" />
               </li>
+              <li>
+                <NavLink to="/les-plastiques" label="wiki plastique" />
+              </li>
             </ul>
             <div className="action-container">
               <Link to={'/inscription'} className="action_btn btn">
@@ -181,6 +185,14 @@ const Navbar = () => {
                   to="/nos-produits"
                   label="Nos produits"
                   icon={<FaProductHunt />}
+                />
+              </li>
+              <li>
+                <NavLink
+                  className="mini-link"
+                  to="/les-plastiques"
+                  label="wiki plastique"
+                  icon={<FaRecycle />}
                 />
               </li>
 

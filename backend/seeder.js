@@ -26,12 +26,13 @@ const importData = async () => {
     // await Product.deleteMany()
     // await RecyclableProduct.deleteMany()
     // await PlasticColor.deleteMany()
+    await PlasticType.deleteMany()
 
     // const createdUsers = await User.insertMany(users)
     // await Category.insertMany(categories)
 
     // const adminUser = createdUsers[0]._id
-    // await PlasticType.insertMany(plasticTypes)
+    await PlasticType.insertMany(plasticTypes)
     // await RecyclableProduct.insertMany(recyclableProducts)
     // await PlasticColor.insertMany(plasticColors)
     console.log('Data Imported!'.green.inverse)

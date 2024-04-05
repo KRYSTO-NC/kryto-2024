@@ -104,3 +104,129 @@
     margin-top: 1rem;
   }
   
+.icone-container{
+  height: 10rem;
+  width: 10rem;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.fact {
+  margin: 2rem 0;
+background-color: $primary-color;
+padding: 1rem 2rem;
+width: 40rem;
+color: white;
+border-left : 10px solid $secondary-color;
+}
+
+.full-img{
+  width: 80%;
+  display: flex;
+  margin: 1rem auto;
+  height: 50rem;
+  object-fit: cover;
+  img{
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+
+.icone-sigle{
+  width: 10rem;
+  height: 10rem;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.plastic-type-card{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+   border: solid 2px $primary-color;
+   padding:  2rem;
+   border-radius: 10px;
+  
+  h3{
+    text-align: center;
+  }
+
+  
+  }
+
+
+
+  .recyclable-product-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    height: 40rem;
+    position: relative;
+    flex-wrap: wrap;
+    background-color: #fff;
+
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    margin: 2rem ;
+     border: solid 2px $primary-color;
+     padding:  2rem;
+     border-radius: 10px;
+    .product-card-thumb{
+      width: 100%;
+      height: 14rem;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .plastics{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      margin: 2rem 0;
+   
+    }
+
+    .card-icone{
+      width: 4rem;
+      height: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    h2{
+      text-align: center;
+      font-size: 1.2rem;
+    }
+  }
+
+
+  .recyclable-products-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }

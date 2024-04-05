@@ -1298,4 +1298,123 @@ button {
 
 .btn-generate-pdf {
   margin-top: 1rem;
+}
+
+.icone-container {
+  height: 10rem;
+  width: 10rem;
+}
+.icone-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.fact {
+  margin: 2rem 0;
+  background-color: #9196CA;
+  padding: 1rem 2rem;
+  width: 40rem;
+  color: white;
+  border-left: 10px solid #7EC7B8;
+}
+
+.full-img {
+  width: 80%;
+  display: flex;
+  margin: 1rem auto;
+  height: 50rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.full-img img {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.icone-sigle {
+  width: 10rem;
+  height: 10rem;
+}
+.icone-sigle img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.plastic-type-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  border: solid 2px #9196CA;
+  padding: 2rem;
+  border-radius: 10px;
+}
+.plastic-type-card h3 {
+  text-align: center;
+}
+
+.recyclable-product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  height: 40rem;
+  position: relative;
+  flex-wrap: wrap;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  margin: 2rem;
+  border: solid 2px #9196CA;
+  padding: 2rem;
+  border-radius: 10px;
+}
+.recyclable-product-card .product-card-thumb {
+  width: 100%;
+  height: 14rem;
+}
+.recyclable-product-card .product-card-thumb img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.recyclable-product-card .plastics {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0;
+}
+.recyclable-product-card .card-icone {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.recyclable-product-card .card-icone img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.recyclable-product-card h2 {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.recyclable-products-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }/*# sourceMappingURL=main.css.map */

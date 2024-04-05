@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a93997dd.css",
+    "main.js": "/static/js/main.9bfb8ee4.js",
+    "static/js/239.dfdb0d71.chunk.js": "/static/js/239.dfdb0d71.chunk.js",
+    "static/js/213.0bf6910c.chunk.js": "/static/js/213.0bf6910c.chunk.js",
+    "static/js/455.bac021b7.chunk.js": "/static/js/455.bac021b7.chunk.js",
+    "static/media/tortue_plastic_2.jpeg": "/static/media/tortue_plastic_2.188e2730de2b3caf51a4.jpeg",
+    "static/media/tortue_plastic.jpeg": "/static/media/tortue_plastic.195a317c1bb261e8eff2.jpeg",
+    "static/media/plastic_paillettes_2.jpeg": "/static/media/plastic_paillettes_2.797e05baa2e84b7f6f72.jpeg",
+    "static/media/bouchon_hand.jpeg": "/static/media/bouchon_hand.0ba8653e1392bebcbeda.jpeg",
+    "static/media/recyclage_bouteille.jpeg": "/static/media/recyclage_bouteille.ebc936c90d6465d5da92.jpeg",
+    "static/media/plasticpile.svg": "/static/media/plasticpile.cdb1004dc18d67ef85c83e80c64f061b.svg",
+    "static/media/thermoexemplle2.jpg": "/static/media/thermoexemplle2.906649e4f0f9e75345e0.jpg",
+    "static/media/thermoexemple.jpg": "/static/media/thermoexemple.6f1ca67ce9db21a24970.jpg",
+    "static/media/thermo.jpg": "/static/media/thermo.371f21b23383e617f5d8.jpg",
+    "index.html": "/index.html",
+    "main.a93997dd.css.map": "/static/css/main.a93997dd.css.map",
+    "main.9bfb8ee4.js.map": "/static/js/main.9bfb8ee4.js.map",
+    "239.dfdb0d71.chunk.js.map": "/static/js/239.dfdb0d71.chunk.js.map",
+    "213.0bf6910c.chunk.js.map": "/static/js/213.0bf6910c.chunk.js.map",
+    "455.bac021b7.chunk.js.map": "/static/js/455.bac021b7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a93997dd.css",
+    "static/js/main.9bfb8ee4.js"
+  ]
+}

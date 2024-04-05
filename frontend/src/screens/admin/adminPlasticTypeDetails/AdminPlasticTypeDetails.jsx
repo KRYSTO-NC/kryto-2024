@@ -18,6 +18,10 @@ const AdminPlasticTypeDetails = () => {
       {plasticType && (
         <div className="container">
           <h1>{plasticType.data.scientificNameFr}</h1>
+          <div className="icone-container">
+          <img  src={plasticType.data.images[0]} alt="" />
+
+          </div>
           <p>{plasticType.data.description}</p>
 
           <table className="table">
